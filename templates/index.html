@@ -17,15 +17,21 @@
 <body>
     <div class="container text-center mt-5">
         <h1 class="display-4">Let me interpret your dreams</h1>
-        <form method="POST" class="mx-auto col-md-8 col-lg-6">
-            <div class="mb-3">
-                <textarea name="prompt" rows="4" class="form-control"
-                    placeholder="Describe your dreams to me ..."></textarea>
-            </div>
-            <div class="d-grid">
-                <input type="submit" value="Submit" class="btn btn-primary">
-            </div>
-        </form>
+        <div id="form-container">
+            <form method="POST" class="mx-auto col-md-8 col-lg-6">
+                <div class="mb-3">
+                    <textarea name="prompt" rows="4" class="form-control"
+                        placeholder="Describe your dreams to me ..."></textarea>
+                </div>
+                <div class="d-grid">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+        <div id="loading">
+            <div id="loading-spinner"></div>
+            <p>Generating interpretation and image...</p>
+        </div>
 
         {% if interpretation %}
         <h3 class="mt-4">Interpretation:</h3>
@@ -36,7 +42,19 @@
         <h3 class="mt-4">Dream Image:</h3>
         <img src="{{ image_url }}" alt="Dream Representation" class="img-fluid">
         {% endif %}
+
     </div>
+    <script>
+        // Show the loading spinner when form is submitted
+        const form = document.querySelector("form");
+        const loadingElement = document.getElementById("loading");
+        const formContainer = document.getElementById("form-container");
+        // Show loading spinner
+        form.onsubmit = function () {
+            loadingElement.style.display = "block";
+            formContainer.classList.add("hidden");
+        };
+    </script>
 </body>
 
 </html>
