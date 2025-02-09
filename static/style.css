@@ -7,9 +7,10 @@ body {
     background-attachment: fixed;
 }
 
-h1 {
+h1,
+h3 {
     color: azure;
-    margin: 50px;
+    margin: 20px;
     font-family: "Cinzel Decorative", serif;
     font-weight: 700;
     font-style: normal;
