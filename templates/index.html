@@ -9,8 +9,9 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -26,9 +27,14 @@
             </div>
         </form>
 
-        {% if result %}
-        <h3 class="mt-4">Response:</h3>
-        <div class="alert alert-secondary">{{ result }}</div>
+        {% if interpretation %}
+        <h3 class="mt-4">Interpretation:</h3>
+        <div class="alert alert-secondary">{{ interpretation }}</div>
+        {% endif %}
+
+        {% if image_url %}
+        <h3 class="mt-4">Dream Image:</h3>
+        <img src="{{ image_url }}" alt="Dream Representation" class="img-fluid">
         {% endif %}
     </div>
 </body>
