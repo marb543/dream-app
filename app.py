@@ -32,13 +32,13 @@ def index():
             interpretation = interpretation_response.choices[0].message.content
 
             # Generate image using DALL-E 3
-            # image_response = openai.images.generate(
-            #     model="dall-e-3",
-            #     prompt=f"A surreal and symbolic visual representation of this dream: {dream_description}. Focus on archetypal symbols, like figures, actions, and settings.",
-            #     n=1,
-            #     size="1024x1024"
-            # )
-            # image_url = image_response['data'][0]['url']
+            image_response = openai.images.generate(
+                model="dall-e-3",
+                prompt=f"A surreal and symbolic visual representation of this dream: {dream_description}. Focus on archetypal symbols, like figures, actions, and settings.",
+                n=1,
+                size="1024x1024"
+            )
+            image_url = image_response.data[0].url
 
         except Exception as e:
             interpretation = f"Error: {str(e)}"
