@@ -1,0 +1,29 @@
+body {
+    /**
+    Image from : https://pixabay.com/illustrations/ai-generated-moon-mystical-forest-8221740/
+    **/
+    background-image: url('./images/dream.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: azure;
+    margin: 50px;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+textarea {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input[type="submit"] {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 900;
+    font-style: normal;
+    background-color: #000f23;
+}
