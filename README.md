@@ -1,4 +1,4 @@
-# minimal-flask-app
+# dream-app
 Minimal code for Flask app making calls to the OpenAI API
 
 
